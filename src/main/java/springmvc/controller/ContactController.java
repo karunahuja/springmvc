@@ -41,6 +41,12 @@ public class ContactController {
 	
 		System.out.println(user);
 		
+		
+		if(user.getUserName().isBlank()) {
+			return "redirect:/contact";
+		}
+		
+		
 		int createdUser=this.userService.createUser(user);
 		
 		
