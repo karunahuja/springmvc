@@ -24,6 +24,8 @@ public class HomeController {
 		friends.add("Abc");
 		model.addAttribute("f", friends);
 		
+		
+		
 		return "index";
 		
 	}
@@ -45,7 +47,16 @@ public class HomeController {
 		System.out.println("Help url");
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("name","Karun");
+		modelAndView.addObject("rollnumber","5025");
 		modelAndView.setViewName("help");
+		
+		//marks
+		List<Integer> list=new ArrayList<Integer>();
+		list.add(11);
+		list.add(12);
+		list.add(13);
+		modelAndView.addObject("marks", list);
+		
 		
 		return modelAndView;
 		
