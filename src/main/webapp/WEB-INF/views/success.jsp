@@ -11,6 +11,9 @@
 </head>
 <body>
 <h1> ${Header} </h1>
+
+<h1>${msg }</h1>
+
 <h1>Welcome ${user.userName }</h1>
 <h1>Email is ${user.email }</h1>
 <h1> Your password is ${user.password }</h1>

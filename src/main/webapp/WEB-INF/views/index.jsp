@@ -31,5 +31,6 @@ for(String s:friends){
 
 %>
 
+
 </body>
 </html>

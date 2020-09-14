@@ -2,6 +2,7 @@ package springmvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import springmvc.model.User;
 
-
 @Controller
 public class ContactController {
-
+	@Autowired
+	private springmvc.service.UserService userService;
+	
+	
 	@ModelAttribute
 	public void commonDataForModel(Model model) {
 		
@@ -38,9 +41,13 @@ public class ContactController {
 	
 		System.out.println(user);
 		
+		int createdUser=this.userService.createUser(user);
+		
+		
+		model.addAttribute("msg", "User created with id"+ createdUser);
+		
 		model.addAttribute("user",user);
 		
-		 
 
 	    return "success";
 	}
